@@ -1,4 +1,5 @@
 from flask import Flask, request, Response
+from logic import calculate
 
 app = Flask(__name__)
 
@@ -11,7 +12,5 @@ def compute():
     #print(data)
     return Response(str(calculate(data)), status = 200)
 
-def calculate(data):
-    return sum(range(1, data + 1))
 
 app.run(port = 5003, debug = True)
